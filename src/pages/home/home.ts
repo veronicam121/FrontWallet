@@ -15,9 +15,11 @@ import { User } from '../../app/models/user';
 export class HomePage {
 
   private user: User;
+  private balance: number;
 
   constructor(public navCtrl: NavController, private restService: RestService) {
     this.user = this.restService.user;
+    this.balance = 2.35;
   }
 
   private goToReceive() {

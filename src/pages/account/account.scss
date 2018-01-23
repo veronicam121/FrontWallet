@@ -1,1 +1,48 @@
 
+$font-size-account-options: 16.82px;
+$account-img-height: 72px;
+$account-img-width: 72px;
+$account-options-radius: 22.321px;
+$account-options-width: 249.312px;
+$account-options-height: 44.642px;
+
+.account-header-background{
+    background-color:map-get($colors,secondary);
+}
+img.account-img {
+    height: $account-img-height;
+    width: $account-img-width;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+
+}
+.account-header{
+    font-size: $font-size-menu-lg;
+    text-align: center;
+}
+
+.account-info{
+    font-size: $font-size-info-text;
+    color: map-get($colors, terciary );
+    margin-top: 40px;
+    text-align: center;
+}
+
+// Doesnt display correctly
+
+button.account-options {
+    border-radius: $account-options-radius;
+    width: $account-options-width;
+    height: $account-img-height;
+    font-size: $font-size-account-options;
+    color: map-get($colors, dark);
+    background: map-get($colors, clear );
+    border-color: map-get($colors, terciary ) !important;
+    border-style: solid !important;
+    margin:auto;
+}
+
+

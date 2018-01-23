@@ -49,9 +49,9 @@ export class RestService {
       '../../assets/imgs/user.png',
       );
     this.addressBook = [
-      new Address(1, '../../assets/imgs/user.png', 'alias 1', '42sdsvgf93ghg823'),
-      new Address(2, '../../assets/imgs/user.png', 'alias 2', 'acnjsdnjwsdsjdsd'),
-      new Address(3, '../../assets/imgs/user.png', 'alias 3', 'dfje4y7837yjsdcx'),
+      new Address(1, '../../assets/icon/wallet-user.svg', 'alias 1', '42sdsvgf93ghg823'),
+      new Address(2, '../../assets/icon/wallet-user.svg', 'alias 2', 'acnjsdnjwsdsjdsd'),
+      new Address(3, '../../assets/icon/wallet-user.svg', 'alias 3', 'dfje4y7837yjsdcx'),
     ];
     this.activityList = [
       new Activity(1, '12/12/2017', 'Acceso desde dispositivo Android NG-7800'),
@@ -62,9 +62,9 @@ export class RestService {
       new Activity(6, '28/12/2016', 'Acceso desde dispositivo iPhone 6c'),
     ];
     this.transactionList = [
-      new Transaction(1, '12/12/2017', '34ryjhgcs35hjkjl3125lk34324s0944klnfcsjdfdsofkdofkdskfofssf', 0.3423, 0),
-      new Transaction(2, '11/12/2017', '343sdsd12sed5jh343jhjhjh839281fhn19403nc903i3iencjdiofw0w24', 0.00023, 9.20),
-      new Transaction(3, '09/12/2017', 'acbvy34fds353125ghgda3432sd24rewfwdqw432|7684rerqecxz231414', 0.00000232, 3.40),
+      new Transaction(1, '12/12/2017', 'Alias', 0.3423, '../../assets/icon/wallet-user.svg'),
+      new Transaction(2, '11/12/2017', 'Alias', 0.00023, '../../assets/icon/wallet-user.svg'),
+      new Transaction(3, '09/12/2017', 'Alias', 0.00000232, './../assets/icon/wallet-user.svg'),
     ];
 
     // For getting the user info

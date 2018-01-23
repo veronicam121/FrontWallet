@@ -1,3 +1,75 @@
-.header {
-    text-align:center;
+// Font Sizes
+$font-size-header: 21.93px;
+$font-size-input: 17.41px;
+$font-size-menu: 13.48px;
+$font-size-menu-lg: 14.04px;
+$font-size-address-alias: 16.31;
+$font-size-adddress-address: 10.12px;
+$font-size-title: 21.96px;
+$font-size-buttons: 20.24px;
+$font-size-selection: 16.31px;
+$font-size-info-text: 15.75px;
+$display-img-height: 130px;
+
+// Global Styles
+
+* {
+    font-family: 'Wallet';
 }
+
+.no-scroll .scroll-content{
+  overflow-y: auto;
+}
+
+.header-md::after, .header-ios::after {
+  display: none !important;
+}
+
+.display-img {
+  display: flex;
+  width: 100%;
+  height: $display-img-height;
+  background-color: map-get($colors,primary);
+  align-items: center;
+  justify-content: center;
+  color: map-get($colors, clear);
+}
+
+ion-title {
+  font-family: 'Wallet-Bold';
+  font-size: $font-size-header;
+  text-transform: capitalize;
+  // For Centering text on Android Devices
+  position: absolute;
+  top:0;
+  left:0;
+  padding:0;
+  width: 100%;
+  height:100%;
+  text-align: center;
+}
+
+// Menu Style
+
+ion-item.menu-user {
+  text-align: center;
+  font-size: $font-size-menu-lg;
+  color: map-get($colors, primary);
+}
+
+button.menu-option {
+  font-size: $font-size-menu;
+  color: map-get($colors, terciary);
+}
+
+img.menu-img {
+  widows: 62px;
+  height: 62px;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+

@@ -1,3 +1,14 @@
 page-transactions {
-
+  .wallet-transactions {
+    background: map-get($colors, light);
+    border-radius: 34.858px;
+    height: 69.716px;
+    margin-top: 10px;
+  }
+  img.transaction-img {
+    widows: 62px;
+    height: 62px;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }

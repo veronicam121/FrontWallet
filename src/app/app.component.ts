@@ -26,25 +26,25 @@ export class MyApp {
   public pages: Array<{
     title: string,
     component: any,
+    icon: string,
   }>;
   public username: string;
   public avatar: string;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, 
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
               public restService: RestService) {
     this.initializeApp();
     // List of pages that appear on the Side Menu
     this.pages = [
-      { title: 'Inicio', component: HomePage },
-      { title: 'Cuenta', component: AccountPage },
-      { title: 'Libreta de Contactos', component: AddressBookPage },
-      { title: 'Transacciones', component: TransactionsPage },
-      { title: 'Actividad', component: ActivityPage },
-      { title: 'Datos del BlockChain', component: BlockchainPage },
+      { title: 'Inicio', component: HomePage, icon: 'wallet-home' },
+      { title: 'Cuenta', component: AccountPage, icon: 'wallet-account' },
+      { title: 'Libreta de Contactos', component: AddressBookPage, icon: 'wallet-address-book' },
+      { title: 'Transacciones', component: TransactionsPage, icon: 'wallet-transactions' },
+      { title: 'Actividad', component: ActivityPage, icon: 'wallet-activity' },
+      { title: 'Datos del BlockChain', component: BlockchainPage, icon: 'wallet-transactions' },
     ];
 
     // Placeholder data for displaying
-    this.avatar = '/imgs/user.png';
     this.username = 'Usuario';
 
   }

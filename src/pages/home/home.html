@@ -9,30 +9,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="inicio">
-  <div class="balance" *ngIf="user.wallet!==undefined">
-      <h5>Billetera</h5>
-    {{user.wallet.guid}}
+<ion-content no-bounce overflow-scroll="false" class="no-scroll">
+  <div class="display-img home-balance" *ngIf="user.wallet!==undefined">
+    {{balance}} BTC
   </div>
-  <div class="header">
-    <h5>Cuenta</h5>
-    <div *ngIf="user.wallet!==undefined">
-      <p>{{user.wallet.address}}</p>
-    </div>
+  <div class="home-wallet">
+    <h5>Billetera</h5>
+    {{user.wallet.guid}}
   </div>
   <div class="codigo">
     <img src="{{user.code}}" />
   </div>
-  <ion-row class="botonera">
-    <ion-col col-6>
-      <button id="recibir" full ion-button on-click="goToReceive()">
-        Recibir
-      </button>
-    </ion-col>
-    <ion-col col-6>
-      <button id="enviar" full ion-button color="secondary" on-click="goToSend()">
-        Enviar
-      </button>
-    </ion-col>
-  </ion-row>
+  <button class="home-button receive-button" block ion-button on-click="goToReceive()">
+    Recibir
+  </button>
+  <button class="home-button send"block ion-button on-click="goToSend()">
+    Enviar
+  </button>
 </ion-content>

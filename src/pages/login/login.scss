@@ -1,11 +1,50 @@
+$login-input-width: 263.598px;
+$login-input-height: 53.891px;
+$login-input-radius: 17.906px;
+$login-button-width: 220.038px;
+$login-button-height: 53.891px;
+$login-button-radius: 26.945px;
+$font-size-login-recover: 10.44px;
+$font-size-login: 16.25px;
+$login-recover-button-height: 10.44px;
+
 .logo img{
     display:block;
     width:50%;
     height:auto;
+    margin-top: 50px;
+    margin-bottom:40px;
     margin-left:auto;
     margin-right:auto
 }
-.recuperar{
-    color:#3664A3;
-    float:left;
+
+ion-item.login-input {
+    background: map-get($colors, light);
+    border-radius: $login-input-radius;
+    height: $login-input-height;
+    width: $login-input-width;
+    margin-top: 10px;
+    font-size: $font-size-input;
 }
+
+.login-button {
+    background: map-get($colors, primary);
+    border-radius: $login-input-radius;
+    height: $login-button-height;
+    width: $login-button-width;
+    font-size: $font-size-login;
+    margin: auto;
+}
+
+.login-recover-button{
+    font-size: $font-size-login-recover;
+    color: map-get($colors, terciary);
+    background-color: map-get($colors, clear);
+}
+
+.login-register-button{
+    font-size: $font-size-login;
+    color: map-get($colors, terciary);
+    background-color: map-get($colors, clear);
+}
+

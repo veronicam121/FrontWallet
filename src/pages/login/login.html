@@ -1,33 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Iniciar Sesión</ion-title>
-  </ion-navbar>
-</ion-header>
 <ion-content padding>
   <div class="logo">
-    <img src="assets/imgs/Logo.png">
+    <img src="assets/imgs/logo.svg">
   </div>
   <form id="login">
-    <ion-list>
-      <ion-item>
+    <ion-list no-lines>
+      <ion-item class="login-input">
         <ion-input type="email" placeholder="Correo Electrónico"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item class="login-input">
         <ion-input type="password" placeholder="Contraseña"></ion-input>
       </ion-item>
-    </ion-list>
-    <div class="recuperar">
-      <button ion-button clear block small text-capitalize>
+      <button ion-button block class="login-recover-button">
         Recuperar Contraseña
       </button>
-    </div>
-    <div>
-      <button ion-button color="positive" block on-click="goToLogIn()">
+      <button ion-button block class="login-button" on-click="goToLogIn()">
         Iniciar Sesión
       </button>
-    </div>
-    <button ion-button clear color="positive" block on-click="goToRegister()">
-      Registrarse
-    </button>
+      <button ion-button block class="login-register-button" on-click="goToRegister()">
+        Registrarse
+      </button>
+    </ion-list>
   </form>
 </ion-content>
