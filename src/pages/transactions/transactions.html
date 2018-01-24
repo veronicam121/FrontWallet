@@ -6,11 +6,24 @@
 
 <ion-content>
   <ion-list>
-    <ion-item class="wallet-transactions" *ngFor="let t of transactionList" text-wrap>
-      <ion-thumbnail item-left>
-        <img class="address-img" src="{{t.img}}" />
-      </ion-thumbnail>
-      {{t.alias}} {{t.date}} {{t.amount}} BTC
+    <ion-item no-line class="transactions-container" *ngFor="let t of transactionList" text-wrap>
+      <ion-row>
+      <img class="transactions-img circular" src="{{t.img}}" />
+      <ion-col>
+        <div class="transactions-alias">
+          {{t.alias}} 
+        </div>
+        <div class="transactions-date">
+          {{t.date}} 
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="transactions-amount">
+          {{t.amount}} <br>
+          BTC
+        </div>
+      </ion-col>
+    </ion-row>
     </ion-item>
   </ion-list>
 </ion-content>

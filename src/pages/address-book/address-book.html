@@ -8,12 +8,15 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding class="wallet-address-book" *ngFor="let a of restService.addressBook" text-wrap>
-      <ion-item (click)="editAddress(a)">
-        <ion-thumbnail item-left>
-          <img class="address-img" src="{{a.img}}" />
-        </ion-thumbnail>
-        #{{a.id}} {{a.alias}}
+    <ion-item-sliding *ngFor="let a of restService.addressBook" text-wrap>
+      <ion-item no-lines class="address-book-container center-text" (click)="editAddress(a)">
+          <img class="address-book-img" src="{{a.img}}" />
+          <div class="address-book-alias">
+            #{{a.id}} {{a.alias}}
+          </div>
+          <div class="address-book-address">
+            {{a.address}}
+          </div>
       </ion-item>
       <ion-item-options>
         <button ion-button color="danger" (click)="removeAddress(a)" icon-start>

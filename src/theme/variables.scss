@@ -37,6 +37,7 @@ $colors: (
 );
 
 $toolbar-background: map-get($colors, primary);
+$toolbar-border-color: map-get($colors, primary);
 
 
 @font-face {
@@ -86,6 +87,7 @@ ion-icon {
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+$toolbar-ios-border-color: map-get($colors, primary );
 
 // App Material Design Variables
 // --------------------------------------------------
@@ -93,7 +95,7 @@ ion-icon {
 
 $button-md-text-transform: none;
 $button-md-box-shadow: none;
-
+$toolbar-md-border-color: map-get($colors, primary);
 
 // App Windows Variables
 // --------------------------------------------------

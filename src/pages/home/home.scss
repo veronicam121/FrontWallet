@@ -18,11 +18,6 @@ $home-button-radius: 26.07px;
     text-align: center;
 }
 
-.home-wallet h5 {
-    font-family: "Wallet-Bold";
-    color: map-get($colors, primary );
-}
-
 .home-button {
     width: $home-button-width;
     height: $home-button-height;

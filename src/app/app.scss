@@ -3,54 +3,113 @@ $font-size-header: 21.93px;
 $font-size-input: 17.41px;
 $font-size-menu: 13.48px;
 $font-size-menu-lg: 14.04px;
-$font-size-address-alias: 16.31;
-$font-size-adddress-address: 10.12px;
 $font-size-title: 21.96px;
 $font-size-buttons: 20.24px;
 $font-size-selection: 16.31px;
 $font-size-info-text: 15.75px;
+$font-size-address-alias: 16.31px;
+$font-size-address-address: 12.37px;
 $display-img-height: 130px;
+$button-height: 53.891px;
+$button-height-sm: 30px;
+$button-radius: 26.945px;
+$button-width-md: 220.038px;
+$button-width-lg: 263.598px;
+$padding-md: 20px;
+$padding-sm: 10px;
 
 // Global Styles
-
 * {
-    font-family: 'Wallet';
+  font-family: 'Wallet';
 }
 
-.no-scroll .scroll-content{
+.no-scroll .scroll-content {
   overflow-y: auto;
 }
 
-.header-md::after, .header-ios::after {
+.header-md::after,
+.header-ios::after {
   display: none !important;
+}
+
+.footer-md::before {
+  background-image: none;
+}
+
+.md ion-list>.item:last-child,
+.md ion-list>.item-wrapper:last-child .item,
+.wp ion-list>.item:last-child,
+.wp ion-list>.item-wrapper:last-child .item,
+.ios ion-list>.item:last-child,
+.ios ion-list>.item-wrapper:last-child .item {
+  border-bottom: none;
+}
+
+.button{
+  height: $button-height;
+  border-radius: $button-radius;
+  margin:auto;
+  margin-top: $padding-sm;
+  margin-bottom: $padding-sm;
+  font-size: $font-size-buttons;
+}
+
+ion-title {
+  text-transform: capitalize; // For Centering text on Android Devices
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.toolbar-title {
+  font-family: 'Wallet-Bold';
+  font-size: $font-size-header;
+}
+
+.page-title {
+  font-family: 'Wallet-Bold';
+  font-size: $font-size-title;
+  color: map-get($colors, primary);
+  text-align: center;
+  padding-top: $padding-md;
 }
 
 .display-img {
   display: flex;
   width: 100%;
   height: $display-img-height;
-  background-color: map-get($colors,primary);
+  background-color: map-get($colors, primary);
   align-items: center;
   justify-content: center;
   color: map-get($colors, clear);
 }
 
-ion-title {
-  font-family: 'Wallet-Bold';
-  font-size: $font-size-header;
-  text-transform: capitalize;
-  // For Centering text on Android Devices
-  position: absolute;
-  top:0;
-  left:0;
-  padding:0;
-  width: 100%;
-  height:100%;
-  text-align: center;
+.img.circular {
+  border-radius: 50%;
 }
 
-// Menu Style
+.center-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
 
+// app.component.ts Style 
 ion-item.menu-user {
   text-align: center;
   font-size: $font-size-menu-lg;
@@ -70,6 +129,3 @@ img.menu-img {
   margin-left: auto;
   margin-right: auto;
 }
-
-
-

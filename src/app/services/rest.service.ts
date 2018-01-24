@@ -64,7 +64,7 @@ export class RestService {
     this.transactionList = [
       new Transaction(1, '12/12/2017', 'Alias', 0.3423, '../../assets/icon/wallet-user.svg'),
       new Transaction(2, '11/12/2017', 'Alias', 0.00023, '../../assets/icon/wallet-user.svg'),
-      new Transaction(3, '09/12/2017', 'Alias', 0.00000232, './../assets/icon/wallet-user.svg'),
+      new Transaction(3, '09/12/2017', 'Alias', 0.00000232, '../../assets/icon/wallet-user.svg'),
     ];
 
     // For getting the user info

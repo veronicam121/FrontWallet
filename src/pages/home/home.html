@@ -13,8 +13,10 @@
   <div class="display-img home-balance" *ngIf="user.wallet!==undefined">
     {{balance}} BTC
   </div>
+  <div class="page-title">
+    Billetera
+  </div>
   <div class="home-wallet">
-    <h5>Billetera</h5>
     {{user.wallet.guid}}
   </div>
   <div class="codigo">
@@ -23,7 +25,7 @@
   <button class="home-button receive-button" block ion-button on-click="goToReceive()">
     Recibir
   </button>
-  <button class="home-button send"block ion-button on-click="goToSend()">
+  <button class="home-button send" block ion-button on-click="goToSend()">
     Enviar
   </button>
 </ion-content>

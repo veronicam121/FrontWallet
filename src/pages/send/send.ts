@@ -14,7 +14,6 @@ export class SendPage {
   private selectedAddress: Address;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events) {
-    this.selectedAddress = new Address(0, '../../assets/imgs/user.png', '', '');
     this.event.subscribe('selected:address', (addressData) => {
       this.selectedAddress = this.duplicateAddress(addressData);
     });

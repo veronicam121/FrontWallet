@@ -1,14 +1,42 @@
-page-transactions {
-  .wallet-transactions {
-    background: map-get($colors, light);
-    border-radius: 34.858px;
-    height: 69.716px;
-    margin-top: 10px;
-  }
-  img.transaction-img {
-    widows: 62px;
-    height: 62px;
-    max-width: 100%;
-    max-height: 100%;
-  }
+$transactions-img-height: 62px;
+$transactions-img-width: 62px;
+$transactions-container-width: 310.261px;
+$transactions-container-height: 69.716px;
+$transactions-container-radius: 34.858px;
+$font-size-transactions-alias: 16.31px;
+$font-size-transactions-date: 10.12px;
+$font-size-transactions-amount: 16.31px;
+
+.transactions-container {
+  background-color: map-get($colors, light);
+  border-radius: $transactions-container-radius;
+  height: $transactions-container-height;
+  width: $transactions-container-width;
+  margin-top: 10px;
+  border-style: none;
+}
+
+img.transactions-img {
+  max-width: $transactions-img-width;
+  max-height: $transactions-img-height;
+  align-content: left;
+  float: left;
+}
+
+.transactions-alias {
+  font-size: $font-size-transactions-alias;
+  color: map-get($colors, terciary);
+
+}
+
+.transactions-date {
+  font-size: $font-size-transactions-date;
+  margin-top: 2px;
+  color: map-get($colors, terciary);
+}
+
+.transactions-amount {
+  font-size: $font-size-transactions-amount;
+  color: map-get($colors, primary);
+  text-align: right;
 }

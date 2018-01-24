@@ -6,13 +6,13 @@ export class Transaction {
     public date: string;
     public alias: string;
     public amount: number;
-    public picture: string;
+    public img: string;
 
     constructor(id: number, date: string, address: string, amount: number, picture: string) {
       this.id = id;
       this.date = date;
       this.alias = address;
       this.amount = amount;
-      this.picture = picture;
+      this.img = picture;
     }
 }

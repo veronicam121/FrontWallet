@@ -1,3 +1,42 @@
-page-send {
+.send-button {
+    width: $button-width-lg;
+}
 
+.button-scan-code{
+    background-color: map-get($colors, terciary);
+}
+
+.button-continue{
+    width: $button-width-md;
+}
+
+.send-address-container {
+    background-color: map-get($colors, light);
+    border-radius: $address-book-container-radius;
+    height: $address-book-img-height;
+    width: $address-book-container-width;
+    box-shadow:inset 0px 0px 0px $padding-sm map-get($colors, clear);
+    margin-top: $padding-sm;
+    margin-bottom: $padding-sm;
+    border-style: none;
+}
+
+img.send-address-img {
+    max-width: $address-book-img-width;
+    max-height: $address-book-img-height;
+    float: left;
+    align-content: left;
+}
+
+.send-selected-address-address{
+    font-size: $font-size-address-address;
+    color: map-get($colors, dark);
+    padding-top: $padding-sm;
+    text-align: center;
+}
+
+.send-selected-address-alias{
+    font-size: $font-size-address-alias;
+    color: map-get($colors, terciary);
+    text-align: center;
 }
