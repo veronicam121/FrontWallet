@@ -8,7 +8,7 @@ $font-size-transactions-date: 10.12px;
 $font-size-transactions-amount: 16.31px;
 
 .transactions-container {
-  background-color: map-get($colors, light);
+  background-color: $light;
   border-radius: $transactions-container-radius;
   height: $transactions-container-height;
   width: $transactions-container-width;
@@ -25,18 +25,18 @@ img.transactions-img {
 
 .transactions-alias {
   font-size: $font-size-transactions-alias;
-  color: map-get($colors, terciary);
+  color: $secondary;
 
 }
 
 .transactions-date {
   font-size: $font-size-transactions-date;
   margin-top: 2px;
-  color: map-get($colors, terciary);
+  color: $secondary;
 }
 
 .transactions-amount {
   font-size: $font-size-transactions-amount;
-  color: map-get($colors, primary);
+  color: $primary;
   text-align: right;
 }

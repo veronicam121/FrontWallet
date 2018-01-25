@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddressBookPage } from '../address-book/address-book';
 import { Events } from 'ionic-angular/util/events';
 import { Address } from '../../app/models/address';
+import { SendConfirmPage } from '../send-confirm/send-confirm';
 
 @IonicPage()
 @Component({
@@ -24,6 +25,10 @@ export class SendPage {
   }
   private duplicateAddress(object) {
     return new Address(object.id, object.img, object.alias, object.address);
+  }
+
+  private goToSendConfirm(address) {
+    this.navCtrl.push(SendConfirmPage, address);
   }
 
 }

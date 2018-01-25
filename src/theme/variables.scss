@@ -29,8 +29,8 @@ $app-direction: ltr;
 
 $colors: ( 
   primary : #d56930, 
-  secondary : #c56126, 
-  terciary : #243156, 
+  secondary: #243156, 
+  terciary : #c56126, 
   dark : #686868,
   light: #e4e5e4,
   clear: #ffffff,
@@ -81,6 +81,18 @@ ion-icon {
   &[class*="wallet-logout"] {
     mask-image: url(../assets/icon/wallet-logout.svg);
   }
+  &[class*="wallet-email"] {
+    mask-image: url(../assets/icon/wallet-email.svg);
+  }
+  &[class*="wallet-password"] {
+    mask-image: url(../assets/icon/wallet-password.svg);
+  }
+  &[class*="wallet-user"] {
+    mask-image: url(../assets/icon/wallet-user.svg);
+  }
+  &[class*="wallet-arrow"] {
+    mask-image: url(../assets/icon/wallet-arrow.svg);
+  }
 }
 
 // App iOS Variables
@@ -88,6 +100,7 @@ ion-icon {
 // iOS only Sass variables can go here
 
 $toolbar-ios-border-color: map-get($colors, primary );
+$item-ios-detail-push-show: none;
 
 // App Material Design Variables
 // --------------------------------------------------

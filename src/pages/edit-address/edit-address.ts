@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Address } from '../../app/models/address';
+import { Validator } from '@angular/forms/src/directives/validators';
 
 @IonicPage()
 @Component({
@@ -13,15 +14,26 @@ export class EditAddressPage {
   private address: Address;
   private action: string;
   private addressForm: FormGroup;
+  private inputs: [{
+    name: string,
+    type: string,
+    value: any,
+    validators: any,
+  }];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events,
               public formBuilder: FormBuilder) {
     this.address = this.navParams.data;
-    this.addressForm = formBuilder.group({
-      address: [this.address.address, Validators.compose([Validators.minLength(26), Validators.required])],
-      alias: [this.address.alias, Validators.compose([Validators.required])],
-      id: [{value: this.address.id, disabled: true}],
-      img: [this.address.img],
+    this.inputs = [
+      {name: 'Address', value: this.address.address, type: 'text',
+      validators: Validators.compose([Validators.minLength(26), Validators.required])},
+      {name: 'Alias', value: this.address.alias, type: 'text',
+      validators: Validators.compose([Validators.required])},
+      {name: 'Id', value: this.address.id, type: 'text', validators: {disabled: true}},
+    ];
+    this.addressForm = formBuilder.group({});
+    this.inputs.forEach((control) => {
+      this.addressForm.addControl(control.name, new FormControl(control.value, control.validators));
     });
   }
 

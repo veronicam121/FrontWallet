@@ -1,24 +1,73 @@
 // Font Sizes
-$font-size-header: 21.93px;
-$font-size-input: 17.41px;
-$font-size-menu: 13.48px;
-$font-size-menu-lg: 14.04px;
-$font-size-title: 21.96px;
-$font-size-buttons: 20.24px;
-$font-size-selection: 16.31px;
-$font-size-info-text: 15.75px;
-$font-size-address-alias: 16.31px;
-$font-size-address-address: 12.37px;
-$display-img-height: 130px;
-$button-height: 53.891px;
-$button-height-sm: 30px;
-$button-radius: 26.945px;
-$button-width-md: 220.038px;
-$button-width-lg: 263.598px;
-$padding-md: 20px;
-$padding-sm: 10px;
+$font-size-header: 1.375em;
+$font-size-input: 1.1em;
+$font-size-input-thin: 1em;
+$font-size-menu: 0.84em;
+$font-size-menu-lg: 0.87em;
+$font-size-title:1.375em;
+$font-size-buttons: 1.26em;
+$font-size-info-text: 0.9em;
+$font-size-address-alias: 1em;
+$font-size-address-address:0.77em;
+$font-size-home-balance: 2.7em;
+$font-size-home-wallet: 1.25em;
+$font-size-login-recover: 0.85em;
+$font-size-login: 1em;
+$font-size-button-address-delete: 0.77em;
+$font-size-account-options: 16.82px;
 
-// Global Styles
+// Colors
+
+$primary: map-get($colors, primary);
+$secondary: map-get($colors, secondary);
+$terciary: map-get($colors, terciary);
+$clear: map-get($colors, clear);
+$light: map-get($colors, light);
+$dark: map-get($colors, dark);
+
+// Container sizes
+$height-balance: 8.5em;
+$display-img-height: 20%;
+$account-img-height: 72px;
+$account-img-width: 72px;
+
+// Button Styles
+$button-height: 2.5em;
+$button-height-sm: 1.875em;
+$button-radius: 26.945px;
+$button-width-md: 13.75em;
+$button-width-lg: 16.45em;
+$home-button-width: 16em;
+$home-button-height: 3em;
+$home-button-radius: 26.07px;
+$login-recover-button-height: 0.85em;
+$account-options-radius: 1.4em;
+$account-options-width: 15.6em;
+$account-options-height: 2.8em;
+
+
+// Address Styles
+$address-container-width: 18em; 
+$address-container-height: 3.4em;
+$address-container-radius: 34.858px;
+$address-img-height: 74px;
+$address-img-width: 74px;
+
+// Input Styles
+$input-width: 16.45em; 
+$input-height: 3.36em; 
+$input-radius: 17.906px;
+$input-thin-width: 19.3em; 
+$input-thin-height: 2.8em;
+$input-thin-radius: 26.07px;
+
+$padding-lg: 2.5em;
+$padding-md: 1.25em;
+$padding-sm: 0.625em;
+$padding-address: 1em;
+
+
+
 * {
   font-family: 'Wallet';
 }
@@ -73,7 +122,7 @@ ion-title {
 .page-title {
   font-family: 'Wallet-Bold';
   font-size: $font-size-title;
-  color: map-get($colors, primary);
+  color: $primary;
   text-align: center;
   padding-top: $padding-md;
 }
@@ -82,7 +131,7 @@ ion-title {
   display: flex;
   width: 100%;
   height: $display-img-height;
-  background-color: map-get($colors, primary);
+  background-color: $primary;
   align-items: center;
   justify-content: center;
   color: map-get($colors, clear);
@@ -92,33 +141,73 @@ ion-title {
   border-radius: 50%;
 }
 
-.center-text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  height: 100%;
+.address-container{
+    background-color: $light;
+    border-radius: $address-container-radius;
+    height: $address-img-height;
+    width: $address-container-width;
+    box-shadow:inset 0px 0px 0px $padding-sm $clear;
+    margin: auto;
+    margin-top: $padding-sm;
+    margin-bottom: $padding-sm;
+    border-style: none;
+}
+
+.address-alias{
+  padding-top: $padding-address;
+  font-size: $font-size-address-alias;
+  color: $secondary;
+}
+
+.address-address{
+  font-size: $font-size-address-address;
+  color: $dark;
+}
+
+img.address-img {
+  max-width: $address-img-width;
+  max-height: $address-img-height;
+  float: left;
+  align-content: left;
+}
+
+ion-item.input {
+    background: $light;
+    border-radius: $input-radius;
+    height: $input-height;
+    width: $input-width;
+    margin-top: $padding-sm;
+    font-size: $font-size-input;
+}
+
+ion-item.thin-input{
+  background: $light;
+  border-radius: $input-thin-radius;
+  height: $input-thin-height;
+  width: $input-thin-width;
+  margin: auto;
+  margin-bottom: $padding-md;
+  color: $secondary;
+  font-size: $font-size-input-thin;
 }
 
 // app.component.ts Style 
 ion-item.menu-user {
   text-align: center;
   font-size: $font-size-menu-lg;
-  color: map-get($colors, primary);
+  color: $primary;
+}
+
+ion-icon.icon-arrow{
+  float:right;
+  background-color: $dark;
+  width: 2em;
+  height: 2em;
 }
 
 button.menu-option {
   font-size: $font-size-menu;
-  color: map-get($colors, terciary);
+  color: $secondary;
 }
 
 img.menu-img {

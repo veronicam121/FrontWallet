@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Address } from '../../app/models/address';
 
 /**
  * Generated class for the SendConfirmPage page.
@@ -15,7 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SendConfirmPage {
 
+  public address: Address;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.address = this.navParams.data;
   }
 
 }

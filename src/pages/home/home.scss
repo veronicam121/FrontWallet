@@ -1,20 +1,15 @@
-$font-size-home-balance: 43.03px;
-$font-size-home-wallet: 21.86px;
-$height-balance: 130px;
-$home-button-width: 263.598px;;
-$home-button-height: 53.891px;
-$home-button-radius: 26.07px;
+
 
 .home-balance {
     font-family: "Wallet-Bold";
     font-size: $font-size-home-balance;
-    color: map-get($colors, clear);
+    color: $clear;
 }
 
 .home-wallet {
     font-family: "Wallet";
     font-size: $font-size-home-wallet;
-    color: map-get($colors, terciary);
+    color: $secondary;
     text-align: center;
 }
 
@@ -29,14 +24,14 @@ $home-button-radius: 26.07px;
 }
 
 .receive-button{
-    background: map-get($colors , terciary);
+    background: $secondary;
 }
 
 .send-button{
-    background: map-get($colors, secondary);
+    background: $terciary;
 }
 
-.codigo img{
+.code-sm img{
     display:block;
     width: 50%;
     height:auto;

@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list no-lines>
     <ion-item class="display-img account-header-background">
       <img class="account-img" src="../assets/icon/wallet-icon.svg">
       <div class="account-header">
@@ -20,12 +20,11 @@
     <ion-item class="account-info">
       Configuración
     </ion-item>
-    <button ion-item class="account-options">
-      Correo Electrónico
-    </button>
-    <button ion-item block outline class="account-options" *ngFor="let p of pages" (click)="openPage(p)">
-      {{p.title}}
-      <ion-icon name="arrow-dropright" item-right></ion-icon>
+    <button ion-button block outline *ngFor="let o of options" class="account-options">
+      {{o.title}}
+      <ion-label>
+          <ion-icon class="icon-arrow" name="wallet-arrow"></ion-icon>
+      </ion-label>
     </button>
   </ion-list>
 </ion-content>

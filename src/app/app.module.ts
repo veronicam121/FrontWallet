@@ -21,6 +21,7 @@ import { BlockchainPage } from '../pages/blockchain/blockchain';
 import { EditAddressPage } from '../pages/edit-address/edit-address';
 import { LoaderService } from './services/loader.service';
 import { AlertService } from './services/alert.service';
+import { SendConfirmPage } from '../pages/send-confirm/send-confirm';
 
 @NgModule({
   bootstrap: [IonicApp],
@@ -38,6 +39,7 @@ import { AlertService } from './services/alert.service';
     ActivityPage,
     BlockchainPage,
     EditAddressPage,
+    SendConfirmPage,
   ],
   entryComponents: [
     MyApp,
@@ -53,6 +55,7 @@ import { AlertService } from './services/alert.service';
     ActivityPage,
     BlockchainPage,
     EditAddressPage,
+    SendConfirmPage,
   ],
   imports: [
     BrowserModule,

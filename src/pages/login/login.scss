@@ -1,46 +1,26 @@
-$login-input-width: 263.598px;
-$login-input-height: 53.891px;
-$login-input-radius: 17.906px;
-$font-size-login-recover: 10.44px;
-$font-size-login: 16.25px;
-$login-recover-button-height: 10.44px;
 
-.logo img{
-    display:block;
-    width:50%;
-    height:auto;
+  .logo img {
+    display: block;
+    width: 50%;
+    height: auto;
     margin-top: 50px;
-    margin-bottom:40px;
-    margin-left:auto;
-    margin-right:auto
-}
-
-ion-item.login-input {
-    background: map-get($colors, light);
-    border-radius: $login-input-radius;
-    height: $button-height;
-    width: $button-width-lg;
-    margin-top: 10px;
-    font-size: $font-size-input;
-}
-
-.login-button {
-    background: map-get($colors, primary);
-    border-radius: $button-radius;
-    width: $button-width-lg;
-}
-
-.login-recover-button{
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto
+  }
+  .login-button {
+    background: $primary;
+    border-radius: $button-radius; // width: $button-width-lg;
+  }
+  .login-recover-button {
     height: $button-height-sm;
     font-size: $font-size-login-recover;
-    color: map-get($colors, terciary);
-    background-color: map-get($colors, clear);
-}
-
-.login-register-button{
+    color: $secondary;
+    background-color: $clear;
+  }
+  .login-register-button {
     font-size: $font-size-login;
     height: $button-height-sm;
-    color: map-get($colors, terciary);
-    background-color: map-get($colors, clear);
-}
-
+    color: $secondary;
+    background-color: $clear;
+  }

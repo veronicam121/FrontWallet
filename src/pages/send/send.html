@@ -6,26 +6,28 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <div class="page-title">
-    Seleccionar destinatario
-  </div>
-  <button ion-button class="send-button button-scan-code" block>
-    Escanear Código QR
-  </button>
-  <button ion-button class="send-button button-select-address" block on-click="goToAddress()">
-    Libreta de Contactos
-  </button>
-  <ion-item no-lines *ngIf="selectedAddress!=undefined" class="send-address-container" (click)="editAddress(a)">
-    <img class="send-address-img" src="{{selectedAddress.img}}" />
-    <div class="send-address-alias">
-      {{selectedAddress.alias}}
+  <ion-list>
+    <div class="page-title">
+      Seleccionar destinatario
     </div>
-    <div class="send-address-address">
-      {{selectedAddress.address}}
-    </div>
-  </ion-item>
+    <button ion-button class="send-button button-scan-code" block>
+      Escanear Código QR
+    </button>
+    <button ion-button class="send-button button-select-address" block on-click="goToAddress()">
+      Libreta de Contactos
+    </button>
+    <ion-item no-lines *ngIf="selectedAddress!=undefined" class="address-container">
+      <img class="address-img" src="{{selectedAddress.img}}" />
+      <div class="address-alias">
+        {{selectedAddress.alias}}
+      </div>
+      <div class="address-address">
+        {{selectedAddress.address}}
+      </div>
+    </ion-item>
+  </ion-list>
   <ion-footer>
-    <button ion-button block class="send-button button-continue">
+    <button [disabled]="!selectedAddress" ion-button block class="send-button button-continue" (click)="goToSendConfirm(selectedAddress)">
       Continuar
     </button>
   </ion-footer>

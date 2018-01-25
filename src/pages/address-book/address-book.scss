@@ -1,37 +1,11 @@
-$address-book-img-height: 74px;
-$address-book-img-width: 74px;
-$address-book-container-width: 309.928px;
-$address-book-container-height: 54.548px;
-$address-book-container-radius: 34.858px;
-
-.address-book-container {
-    background-color: map-get($colors, light);
-    border-radius: $address-book-container-radius;
-    height: $address-book-img-height;
-    width: $address-book-container-width;
-    box-shadow:inset 0px 0px 0px $padding-sm map-get($colors, clear);
-    margin-top: $padding-sm;
-    margin-bottom: $padding-sm;
-    border-style: none;
+button.button-delete-address{
+    height: $address-container-height;
+    width: auto;
 }
 
-img.address-book-img {
-    max-width: $address-book-img-width;
-    max-height: $address-book-img-height;
-    float: left;
-    align-content: left;
-}
+ion-icon{
+    font-size: $font-size-button-address-delete;
 
-.address-book-alias{
-    padding-top: $padding-sm;
-    font-size: $font-size-address-alias;
-    color: map-get($colors, terciary);
 }
-
-.address-book-address{
-    font-size: $font-size-address-address;
-    color: map-get($colors, dark);
-}
-
 
 

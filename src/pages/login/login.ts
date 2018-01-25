@@ -11,7 +11,16 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
+  public inputs: [{
+    name: string,
+    icon: string;
+    type: string;
+  }];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.inputs = [
+        { name: 'Correo Electrónico', icon: 'wallet-email', type: 'email'},
+        { name: 'Contraseña', icon: 'wallet-password', type: 'password'},
+      ];
   }
 
   private goToLogIn() {

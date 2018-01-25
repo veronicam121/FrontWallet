@@ -10,12 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class ReceivePage {
   // Placeholder data for the view
-  private direction: string;
   private code: string;
+  private address: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.code = 'assets/imgs/QRCode.png';
-    this.direction = '1BPmau8ewds343Bgsds34jsS2fd342saTscqS232QrTscwqQecvbv';
+    this.address = '1BPmau8ewds343Bgsds34jsS2fd342saTscqS232QrTscwqQecvbv';
   }
 
 }
