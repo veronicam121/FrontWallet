@@ -26,14 +26,15 @@ export class EditAddressPage {
     this.address = this.navParams.data;
     this.inputs = [
       {name: 'Address', value: this.address.address, type: 'text',
-      validators: Validators.compose([Validators.minLength(26), Validators.required])},
+      validators: [Validators.minLength(10), Validators.required]},
       {name: 'Alias', value: this.address.alias, type: 'text',
-      validators: Validators.compose([Validators.required])},
-      {name: 'Id', value: this.address.id, type: 'text', validators: {disabled: true}},
+      validators: [Validators.required]},
+      {name: 'Id', value: this.address.id, type: 'text', validators: ''},
     ];
     this.addressForm = formBuilder.group({});
     this.inputs.forEach((control) => {
-      this.addressForm.addControl(control.name, new FormControl(control.value, control.validators));
+      this.addressForm.addControl(control.name, new FormControl(control.value));
+      this.addressForm.controls[control.name].setValidators(control.validators);
     });
   }
 

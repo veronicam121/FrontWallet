@@ -67,20 +67,6 @@ export class RestService {
       new Transaction(3, '09/12/2017', 'Alias', 0.00000232, '../../assets/icon/wallet-user.svg'),
     ];
 
-    // For getting the user info
-
-    // this.getSingleAddress('13XXaBufpMvqRqLkyDty1AXqueZHVe6iyy')
-    //   .subscribe((data) => {
-    //     this.address = data;
-    //     this.user.address = this.address;
-    //   },
-    /*       // Error Handling
-          (error) => {
-            console.log('Error :' + error);
-          },
-        ); */
-  }
-
   // Retrieves the latest BlockChain data
   public getBlockchain(): Observable<IBlockchain> {
       this.loadService.showLoader('Recuperando Información');

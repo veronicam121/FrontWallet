@@ -46,7 +46,6 @@ export class MyApp {
 
     // Placeholder data for displaying
     this.username = 'Usuario';
-
   }
 
   public initializeApp() {
