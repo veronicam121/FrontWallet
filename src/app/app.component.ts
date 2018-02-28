@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ViewController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -44,8 +44,22 @@ export class MyApp {
       { title: 'Datos del BlockChain', component: BlockchainPage, icon: 'wallet-transactions' },
     ];
 
-    // Placeholder data for displaying
     this.username = 'Usuario';
+
+    // Handle Register Back Button
+    platform.registerBackButtonAction(() => {
+      const activeView: ViewController = this.nav.getActive();
+      if (activeView != null) {
+        if (this.nav.canGoBack()) {
+          this.nav.pop();
+        } else if (typeof activeView.instance.backButtonAction === 'function') {
+          activeView.instance.backButtonAction();
+        } else {
+          this.nav.parent.select(0); // goes to the first tab
+        }
+      }
+    });
+
   }
 
   public initializeApp() {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Activity } from '../../app/models/activity';
 import { RestService } from '../../app/services/rest.service';
+import { AppData } from '../../app/app.data';
 
 @IonicPage()
 @Component({
@@ -12,8 +13,8 @@ export class ActivityPage {
 
   private activityList: Activity[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private restService: RestService) {
-    this.activityList = this.restService.activityList;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.activityList = AppData.activityList;
   }
 
   private removeActivity(activity) {
@@ -21,5 +22,9 @@ export class ActivityPage {
     if (index > -1) {
       this.activityList.splice(index, 1);
     }
+  }
+
+  private backButtonAction() {
+    this.navCtrl.pop();
   }
 }

@@ -1,14 +1,36 @@
-// Interface for the Wallet Object
-// Info on https://blockchain.info/api/blockchain_api
+// Interface for the HDWallet Object received by the API
+// Info on https://www.blockcypher.com/dev/bitcoin/?javascript#hdwallet
 
-export interface IWallet {
-    guid: string;
+export interface IHDAddress {
     address: string;
-    label?: string;
-    // Required for importing wallets
-    priv_key?: string;
-    // Required to do transactions
-    password?: string;
-    // Required if double encryption is enabled
-    second_password?: string;
+    path: string;
+    public?: string;
 }
+
+export interface IHDChain {
+    chain_addresses: IHDAddress[];
+    index: number;
+}
+
+export interface IHDWallet {
+    name?: string;
+    token?: string;
+    chains?: IHDChain;
+    hd?: boolean;
+    extended_public_key?: string;
+    subchain_indexes?: number[];
+    addresses?: string[];
+}
+
+
+export interface IHDAddress {
+    address: string;
+    path: string;
+    public?: string;
+}
+
+export interface IHDChain {
+    chain_addresses: IHDAddress[];
+    index: number;
+}
+

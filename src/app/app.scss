@@ -13,6 +13,7 @@ $font-size-home-balance: 2.7em;
 $font-size-home-wallet: 1.25em;
 $font-size-login-recover: 0.85em;
 $font-size-login: 1em;
+$font-size-md: 1.25em;
 $font-size-button-address-delete: 0.77em;
 $font-size-account-options: 16.82px;
 
@@ -27,9 +28,12 @@ $dark: map-get($colors, dark);
 
 // Container sizes
 $height-balance: 8.5em;
-$display-img-height: 20%;
+$display-img-height: 30%;
 $account-img-height: 72px;
 $account-img-width: 72px;
+$container-height-md: 25%;
+$container-height-lg: 30%;
+$confirm-email-img: 144px;
 
 // Button Styles
 $button-height: 2.5em;
@@ -97,20 +101,20 @@ $padding-address: 1em;
 .button{
   height: $button-height;
   border-radius: $button-radius;
+  width: $button-width-lg;
   margin:auto;
   margin-top: $padding-sm;
   margin-bottom: $padding-sm;
   font-size: $font-size-buttons;
 }
 
-ion-title {
-  text-transform: capitalize; // For Centering text on Android Devices
+.title.title-md {
   position: absolute;
+  left: 50%;
   top: 0;
-  left: 0;
-  padding: 0;
-  width: 100%;
+  transform: translateX(-50%);
   height: 100%;
+  width: 70%;
   text-align: center;
 }
 
@@ -178,6 +182,8 @@ ion-item.input {
     width: $input-width;
     margin-top: $padding-sm;
     font-size: $font-size-input;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ion-item.thin-input{

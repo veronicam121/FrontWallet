@@ -34,4 +34,8 @@ export class AddressPage {
     this.event.publish('added:address', form.value);
     this.navCtrl.pop();
   }
+
+  private backButtonAction() {
+    this.navCtrl.pop();
+  }
 }

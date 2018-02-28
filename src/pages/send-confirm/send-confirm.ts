@@ -22,4 +22,12 @@ export class SendConfirmPage {
     this.address = this.navParams.data;
   }
 
+  private backButtonAction() {
+    this.navCtrl.pop();
+  }
+
+  private goToInicio(){
+    this.navCtrl.popToRoot();
+  }
+
 }

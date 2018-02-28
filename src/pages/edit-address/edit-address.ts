@@ -14,12 +14,7 @@ export class EditAddressPage {
   private address: Address;
   private action: string;
   private addressForm: FormGroup;
-  private inputs: [{
-    name: string,
-    type: string,
-    value: any,
-    validators: any,
-  }];
+  private inputs: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events,
               public formBuilder: FormBuilder) {
@@ -42,5 +37,9 @@ export class EditAddressPage {
       form.value.id = this.navParams.data;
       this.event.publish('edited:address', form.value);
       this.navCtrl.pop();
+  }
+
+  private backButtonAction() {
+    this.navCtrl.pop();
   }
 }

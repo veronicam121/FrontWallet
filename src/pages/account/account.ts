@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../app/models/user';
 import { RestService } from '../../app/services/rest.service';
+import { AppData } from '../../app/app.data';
 
 @IonicPage()
 @Component({
@@ -11,17 +12,14 @@ import { RestService } from '../../app/services/rest.service';
 export class AccountPage {
 
   public user: User;
-  public options: [{
-    title: string,
-    // component: any,
-  }];
+  public options: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private restService: RestService) {
-    this.user = restService.user;
-    this.options = [
-      { title: 'Correo Electrónico'}, // component}
-      { title: 'Nombre del Usuario'}, // component: HomePage },
-      { title: 'Contraseña'}, // component: ListPage },
-    ];
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.user = AppData.user;
+    this.options = AppData.accountOptions;
   }
+
+  private backButtonAction() {
+    this.navCtrl.pop();
+    }
 }

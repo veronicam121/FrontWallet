@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ConfirmEmailPage } from '../confirm-email/confirm-email';
+import { AppData } from '../../app/app.data';
 
 @IonicPage()
 
@@ -9,23 +11,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  public inputs: [{
-    name: string,
-    icon: string;
-    type: string;
-  }];
+  public inputs = AppData.inputs;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.inputs = [
-      { name: 'Usuario', icon: 'wallet-user', type: 'text'},
-      { name: 'Correo Electrónico', icon: 'wallet-email', type: 'email'},
-      { name: 'Contraseña', icon: 'wallet-password', type: 'password'},
-      { name: 'Repetir Contraseña', icon: 'wallet-password', type: 'password'}
-    ];
-  
   }
 
-  private goToLogin() {
+  private goToConfirmPage() {
+    this.navCtrl.push(ConfirmEmailPage);
+  }
+
+  private backButtonAction() {
     this.navCtrl.pop();
   }
 }

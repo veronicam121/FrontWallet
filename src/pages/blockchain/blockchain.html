@@ -1,21 +1,40 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Blockchain</ion-title>
+    <ion-title>Blockchain Explorer</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngIf="blockchain!==undefined">
-    <ion-item>
-      Hash: {{blockchain.hash}}
-      <br>
-      Tiempo: {{blockchain.time}}
-      <br>
-      Indice: {{blockchain.block_index}}
-      <br>
-      Height: {{blockchain.height}}
-      <br>
-      Indice de Transacciones: {{blockchain.txIndexes}}
+  <ion-list no-lines>
+    <ion-item class="input">
+      <ion-label>
+        <ion-icon name="search"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="searchValue" placeholder="Buscar Bloque o TX">
+      </ion-input>
     </ion-item>
+    <div *ngIf="(blockchain!==undefined) && (block===undefined)" class="blockchain-info">
+      <ion-item text-wrap>
+        Última Actualización: {{blockchain.time | date:'dd MMM, y hh:mm a'}}
+      </ion-item>
+      <ion-item text-wrap>
+        Altura: {{blockchain.height}}
+      </ion-item>
+      <button (click) = "getBlock(blockchain.hash)" ion-item >
+        Último Bloque: {{blockchain.hash}}
+      </button>
+    </div>
+    <div *ngIf="(block!==undefined)" class="block-info">
+      Hash: {{block.hash}}
+      <br> Nonce: {{block.nonce}}
+      <br> Altura: {{block.height}}
+      <br> Tamaño: {{block.size}}
+      <br> Número de Transacciones: {{block.n_tx}}
+      <br> Volumen de Transacciones: {{block.total}}
+      <br> Comisiones de las Transacciones: {{block.fees}}
+      <br> Fecha y Hora: {{block.time}}
+      <br> Hora de Recepción: {{block.received_time}}
+      <br> Bloque Previo: {{block.prev_block}}
+    </div>
   </ion-list>
 </ion-content>

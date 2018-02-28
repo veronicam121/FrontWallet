@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage,  NavController, NavParams} from 'ionic-angular';
+import { IonicPage,  NavController, NavParams, Platform} from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 import { RegisterPage } from '../register/register';
 
@@ -16,7 +16,7 @@ export class LoginPage {
     icon: string;
     type: string;
   }];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
       this.inputs = [
         { name: 'Correo Electrónico', icon: 'wallet-email', type: 'email'},
         { name: 'Contraseña', icon: 'wallet-password', type: 'password'},
@@ -29,6 +29,10 @@ export class LoginPage {
 
   private goToRegister() {
     this.navCtrl.push(RegisterPage);
+  }
+
+  private backButtonAction() {
+    this.platform.exitApp();
   }
 
 }

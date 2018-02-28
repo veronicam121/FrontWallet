@@ -22,6 +22,7 @@ import { EditAddressPage } from '../pages/edit-address/edit-address';
 import { LoaderService } from './services/loader.service';
 import { AlertService } from './services/alert.service';
 import { SendConfirmPage } from '../pages/send-confirm/send-confirm';
+import { ConfirmEmailPage } from '../pages/confirm-email/confirm-email';
 
 @NgModule({
   bootstrap: [IonicApp],
@@ -40,6 +41,7 @@ import { SendConfirmPage } from '../pages/send-confirm/send-confirm';
     BlockchainPage,
     EditAddressPage,
     SendConfirmPage,
+    ConfirmEmailPage,
   ],
   entryComponents: [
     MyApp,
@@ -56,6 +58,7 @@ import { SendConfirmPage } from '../pages/send-confirm/send-confirm';
     BlockchainPage,
     EditAddressPage,
     SendConfirmPage,
+    ConfirmEmailPage,
   ],
   imports: [
     BrowserModule,

@@ -31,4 +31,8 @@ export class SendPage {
     this.navCtrl.push(SendConfirmPage, address);
   }
 
+  private backButtonAction() {
+    this.navCtrl.pop();
+  }
+
 }

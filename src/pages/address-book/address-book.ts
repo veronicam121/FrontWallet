@@ -5,6 +5,7 @@ import { SendPage } from '../send/send';
 import { EditAddressPage } from '../edit-address/edit-address';
 import { NgZone } from '@angular/core';
 import { RestService } from '../../app/services/rest.service';
+import { AppData } from '../../app/app.data';
 
 @IonicPage()
 @Component({
@@ -19,21 +20,18 @@ export class AddressBookPage {
   private selectAddress: boolean;
   private zone: NgZone;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events,
-              private restService: RestService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events) {
 
     // Listener for event for updating the list
     // Comes from AddressPage, and the data is the new Address data
     this.zone = new NgZone({ enableLongStackTrace: false });
 
     this.event.subscribe('added:address', (addressData) => {
-      this.restService.addressBook.push(addressData);
+      AppData.addressBook.push(addressData);
     });
 
     this.event.subscribe('edited:address', (addressData) => {
-      // Not updating currently because of model
-      this.restService.addressBook[addressData.id] = addressData;
-      console.log(this.restService.addressBook);
+      AppData.addressBook[addressData.id] = addressData;
     });
 
     // If this view parent is SendPage, then we select an Address for sending BTC or CC
@@ -44,7 +42,7 @@ export class AddressBookPage {
 
   // Pushes a new Address to the Address List
   private addAddress() {
-    let id = this.restService.addressBook.length + 1;
+    const id = AppData.addressBook.length + 1;
     this.navCtrl.push(AddressPage, id);
   }
 
@@ -62,9 +60,13 @@ export class AddressBookPage {
 
   // Deletes an Address from the Address List
   private removeAddress(address) {
-    let index = this.restService.addressBook.indexOf(address);
+    const index = AppData.addressBook.indexOf(address);
     if (index > -1) {
-      this.restService.addressBook.splice(index, 1);
+      AppData.addressBook.splice(index, 1);
     }
+  }
+
+  private backButtonAction() {
+    this.navCtrl.pop();
   }
 }

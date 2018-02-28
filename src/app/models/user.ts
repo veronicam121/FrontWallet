@@ -1,12 +1,12 @@
 import { IAddress } from './IAddress';
-import { IWallet } from './IWallet';
+import { IHDWallet } from './IWallet';
 
 // Placeholder Class/Interface for the data of the logged user
 
 export class User {
   public name: string;
   public email: string;
-  public wallet: IWallet;
+  public wallet: IHDWallet;
   // Placeholder for the FrontEnd
   public code: string;
   public avatar: string;
@@ -19,7 +19,7 @@ export class User {
     this.avatar = avatar;
   }
 
-  public setWallet(wallet: IWallet) {
+  public setWallet(wallet: IHDWallet) {
     this.wallet = wallet;
   }
 }
