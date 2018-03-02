@@ -4,6 +4,7 @@ import { RestService } from '../../app/services/rest.service';
 import { AlertService } from '../../app/services/alert.service';
 import { IBlockchain } from '../../app/models/IBlockchain';
 import { IBlock } from '../../app/models/IBlock';
+import { animate, state, style, transition, trigger} from '@angular/animations';
 
 // Component for displaying the updated data from the blockchain
 
@@ -11,12 +12,27 @@ import { IBlock } from '../../app/models/IBlock';
 @Component({
   selector: 'page-blockchain',
   templateUrl: 'blockchain.html',
+  animations: [
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({transform: 'translateX(100%)', opacity: 0}),
+          animate('500ms', style({transform: 'translateX(0)', opacity: 1})),
+        ]),
+        transition(':leave', [
+          style({transform: 'translateX(0)', opacity: 1}),
+          animate('500ms', style({transform: 'translateX(100%)', opacity: 0})),
+        ]),
+      ],
+    ),
+  ],
 })
 export class BlockchainPage {
 
   private blockchain: IBlockchain;
   private block: IBlock;
   private showBlock: boolean;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restService: RestService,
               private alertService: AlertService) {

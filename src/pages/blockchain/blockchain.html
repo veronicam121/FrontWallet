@@ -36,7 +36,7 @@
         <ion-icon *ngIf="showBlock" name="arrow-dropdown" item-end></ion-icon>
       </button>
     </div>
-    <div *ngIf="(showBlock)" class="block-info">
+    <div *ngIf="(showBlock)" class="block-info" [@enterAnimation]>
       <ion-item class="header">
         Bloque
       </ion-item>
@@ -67,7 +67,7 @@
       <ion-item>
         Hora de Recepción: {{block.received_time | date:'dd MMM, y hh:mm a' }}
       </ion-item>
-      <button ion-item (click)="getBlock(block.prev_block, true)">
+      <button ion-item (click)="getBlock(block.prev_block, true)" >
          Bloque Previo: {{block.prev_block}}
         <ion-icon name="arrow-dropright" item-end></ion-icon>
       </button>
