@@ -10,12 +10,16 @@
     <div class="page-title">
       Seleccionar destinatario
     </div>
-    <button ion-button class="send-button button-scan-code" block>
+    <button ion-button class="send-button button-scan-code" on-click="scanQRCode()" block>
       Escanear Código QR
     </button>
     <button ion-button class="send-button button-select-address" block on-click="goToAddress()">
       Libreta de Contactos
     </button>
+    <ion-item class="input" *ngIf="!selectedAddress">
+      <ion-input type="text" [disabled]="selectedAddress" placeholder="Dirección">
+      </ion-input>
+    </ion-item>
     <ion-item no-lines *ngIf="selectedAddress!=undefined" class="address-container">
       <img class="address-img" src="{{selectedAddress.img}}" />
       <div class="address-alias">

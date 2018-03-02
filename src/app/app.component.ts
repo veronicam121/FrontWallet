@@ -13,6 +13,7 @@ import { ActivityPage } from '../pages/activity/activity';
 import { BlockchainPage } from '../pages/blockchain/blockchain';
 import { RestService } from './services/rest.service';
 import { LoaderService } from './services/loader.service';
+import { AppData } from './app.data';
 
 @Component({
   providers: [RestService],
@@ -35,15 +36,8 @@ export class MyApp {
               public restService: RestService) {
     this.initializeApp();
     // List of pages that appear on the Side Menu
-    this.pages = [
-      { title: 'Inicio', component: HomePage, icon: 'wallet-home' },
-      { title: 'Cuenta', component: AccountPage, icon: 'wallet-account' },
-      { title: 'Libreta de Contactos', component: AddressBookPage, icon: 'wallet-address-book' },
-      { title: 'Transacciones', component: TransactionsPage, icon: 'wallet-transactions' },
-      { title: 'Actividad', component: ActivityPage, icon: 'wallet-activity' },
-      { title: 'Datos del BlockChain', component: BlockchainPage, icon: 'wallet-transactions' },
-    ];
 
+    this.pages = AppData.menuPages;
     this.username = 'Usuario';
 
     // Handle Register Back Button

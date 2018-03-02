@@ -2,8 +2,8 @@
 $font-size-header: 1.375em;
 $font-size-input: 1.1em;
 $font-size-input-thin: 1em;
-$font-size-menu: 0.84em;
-$font-size-menu-lg: 0.87em;
+$font-size-menu: 0.95em;
+$font-size-menu-lg: 1.15em;
 $font-size-title:1.375em;
 $font-size-buttons: 1.26em;
 $font-size-info-text: 0.9em;
@@ -175,7 +175,7 @@ img.address-img {
   align-content: left;
 }
 
-ion-item.input {
+ion-item.input, ion-searchbar.input {
     background: $light;
     border-radius: $input-radius;
     height: $input-height;
@@ -184,6 +184,9 @@ ion-item.input {
     font-size: $font-size-input;
     margin-left: auto;
     margin-right: auto;
+}
+ion-content ion-searchbar .searchbar-input {
+  background: $light;
 }
 
 ion-item.thin-input{
@@ -217,7 +220,7 @@ button.menu-option {
 }
 
 img.menu-img {
-  widows: 62px;
+  width: 62px;
   height: 62px;
   max-width: 100%;
   max-height: 100%;

@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule, BrowserAnimationBuilder } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+import { QRScanner } from '@ionic-native/qr-scanner';
 
 // Page List
 import { HomePage } from '../pages/home/home';
@@ -23,6 +25,7 @@ import { LoaderService } from './services/loader.service';
 import { AlertService } from './services/alert.service';
 import { SendConfirmPage } from '../pages/send-confirm/send-confirm';
 import { ConfirmEmailPage } from '../pages/confirm-email/confirm-email';
+import { AppData } from './app.data';
 
 @NgModule({
   bootstrap: [IonicApp],
@@ -62,10 +65,13 @@ import { ConfirmEmailPage } from '../pages/confirm-email/confirm-email';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
   ],
   providers: [
+    AppData,
+    QRScanner,
     StatusBar,
     SplashScreen,
     {

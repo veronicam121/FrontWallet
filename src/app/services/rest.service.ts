@@ -21,11 +21,14 @@ const URL = 'https://api.blockcypher.com/v1/btc/main';
 
 export class RestService {
 
-  private headers;
-  private options;
+  public addressBook;
 
   constructor(private http: Http, private loadService: LoaderService) {
-
+    this.addressBook = [
+      new Address(1, 'assets/icon/wallet-user.svg', 'alias 1', '42sdsvgf93ghg823'),
+      new Address(2, 'assets/icon/wallet-user.svg', 'alias 2', 'acnjsdnjwsdsjdsd'),
+      new Address(3, 'assets/icon/wallet-user.svg', 'alias 3', 'dfje4y7837yjsdcx'),
+  ];
   }
 
   // Retrieves the latest BlockChain data

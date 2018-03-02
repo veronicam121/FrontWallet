@@ -16,9 +16,11 @@ export class BlockchainPage {
 
   private blockchain: IBlockchain;
   private block: IBlock;
+  private showBlock: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restService: RestService,
               private alertService: AlertService) {
+    this.showBlock = false;
   }
 
   // Loads the Blockchain data
@@ -34,8 +36,20 @@ export class BlockchainPage {
     this.navCtrl.pop();
   }
 
-  private getBlock(hash: string) {
+  private toggleBlock(hash: string) {
+    if (this.block !== undefined) {
+      this.showBlock = !this.showBlock;
+    } else {
+     this.getBlock(hash);
+    }
+  }
+
+  private getBlock(hash: string, only?: boolean) {
+    if (only) {
+      this.blockchain = undefined;
+    }
     this.restService.getBlock(hash).subscribe((block) => {
+      this.showBlock = true;
       this.block = block;
     }, (error) => {
       this.handleError(error);

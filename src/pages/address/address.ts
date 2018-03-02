@@ -24,7 +24,7 @@ export class AddressPage {
       address: ['', Validators.compose([Validators.minLength(26), Validators.required])],
       alias: ['', Validators.compose([Validators.required])],
       id: [{value: null, disabled: true}],
-      img: [{value: '../../assets/imgs/user.png'}],
+      img: [{value: 'assets/imgs/user.png'}],
     });
   }
 

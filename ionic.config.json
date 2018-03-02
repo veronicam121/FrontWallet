@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "app_id": "",
+  "app_id": "vision-wallet",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

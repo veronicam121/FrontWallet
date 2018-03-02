@@ -20,18 +20,19 @@ export class AddressBookPage {
   private selectAddress: boolean;
   private zone: NgZone;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public event: Events, 
+              public restService: RestService) {
 
     // Listener for event for updating the list
     // Comes from AddressPage, and the data is the new Address data
     this.zone = new NgZone({ enableLongStackTrace: false });
 
     this.event.subscribe('added:address', (addressData) => {
-      AppData.addressBook.push(addressData);
+      this.restService.addressBook.push(addressData);
     });
 
     this.event.subscribe('edited:address', (addressData) => {
-      AppData.addressBook[addressData.id] = addressData;
+      this.restService.addressBook[addressData.id] = addressData;
     });
 
     // If this view parent is SendPage, then we select an Address for sending BTC or CC
@@ -42,7 +43,7 @@ export class AddressBookPage {
 
   // Pushes a new Address to the Address List
   private addAddress() {
-    const id = AppData.addressBook.length + 1;
+    const id = this.restService.addressBook.length + 1;
     this.navCtrl.push(AddressPage, id);
   }
 
@@ -60,9 +61,9 @@ export class AddressBookPage {
 
   // Deletes an Address from the Address List
   private removeAddress(address) {
-    const index = AppData.addressBook.indexOf(address);
+    const index = this.restService.addressBook.indexOf(address);
     if (index > -1) {
-      AppData.addressBook.splice(index, 1);
+     this.restService.addressBook.splice(index, 1);
     }
   }
 
