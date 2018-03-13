@@ -5,21 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar class="input"
-    [(ngModel)]="searchValue"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
-  </ion-searchbar>
   <ion-list>
-    <ion-item class="input">
+  <!--   <ion-item class="input">
       <ion-label>
         <ion-icon name="search"></ion-icon>
       </ion-label>
-      
       <ion-input type="text" [(ngModel)]="searchValue" placeholder="Buscar Bloque o TX">
       </ion-input>
-    </ion-item>
+    </ion-item> -->
     <div *ngIf="(blockchain!==undefined)" class="blockchain-info">
       <ion-item class="header">
         Blockchain Bitcoin
@@ -67,7 +60,7 @@
       <ion-item>
         Hora de Recepción: {{block.received_time | date:'dd MMM, y hh:mm a' }}
       </ion-item>
-      <button ion-item (click)="getBlock(block.prev_block, true)" >
+      <button ion-item (click)="getBlock(block.prev_block, true)" [@flashchange]="!blockchain = undefined" >
          Bloque Previo: {{block.prev_block}}
         <ion-icon name="arrow-dropright" item-end></ion-icon>
       </button>

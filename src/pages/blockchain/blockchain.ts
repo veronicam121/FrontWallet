@@ -23,6 +23,16 @@ import { animate, state, style, transition, trigger} from '@angular/animations';
           style({transform: 'translateX(0)', opacity: 1}),
           animate('500ms', style({transform: 'translateX(100%)', opacity: 0})),
         ]),
+        trigger('flashChange', [
+          state('off', style({
+              backgroundColor: '#ffffff',
+          })),
+          state('on', style({
+              backgroundColor: '#d56930',
+          })),
+          transition('off => on', animate('500ms')),
+          transition('on => off ', animate('500ms')),
+        ]),
       ],
     ),
   ],

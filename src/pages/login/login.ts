@@ -11,11 +11,7 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
-  public inputs: [{
-    name: string,
-    icon: string;
-    type: string;
-  }];
+  public inputs: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
       this.inputs = [
         { name: 'Correo Electrónico', icon: 'wallet-email', type: 'email'},
